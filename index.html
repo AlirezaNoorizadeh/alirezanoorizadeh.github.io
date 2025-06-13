@@ -1,11 +1,879 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-key="pageTitle">Alireza Noorizadeh - SOFTWARE ENGINEER | AI DEVELOPER & PRODUCT-THINKER</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // This enables class-based dark mode
+    }
+  </script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://alirezanoorizadeh.github.io/assets/profile-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Use Inter for English and Vazirmatn for Persian */
+    :lang(en) {
+      font-family: 'Inter', sans-serif;
+    }
+
+    :lang(fa) {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    /* Tooltip style for LTR */
+    [dir="ltr"] [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      right: 110%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #1e293b;
+      color: #f1f5f9;
+      padding: 4px 8px;
+      border-radius: 10px;
+      font-size: 15px;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    /* Tooltip style for RTL */
+    [dir="rtl"] [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 110%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #1e293b;
+      color: #f1f5f9;
+      padding: 4px 8px;
+      border-radius: 10px;
+      font-size: 15px;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    .dark [data-tooltip]:hover::after {
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+
+    /* Active state for sidebar */
+    nav a.active {
+      background-color: #e0f2fe;
+      /* light: sky-100 */
+    }
+
+    nav a.active iconify-icon {
+      color: #0ea5e9;
+      /* light: sky-500 */
+    }
+
+    .dark nav a.active {
+      background-color: #0c4a6e;
+      /* dark: sky-900 */
+    }
+
+    .dark nav a.active iconify-icon {
+      color: #38bdf8;
+      /* dark: sky-400 */
+    }
+
+    /* --- Glow Effect Styles --- */
+    .glow-card {
+      position: relative;
+      /* Define the glow color using a CSS variable for light mode */
+      --glow-color: rgba(56, 189, 248, 0.75);
+      /* sky-400 for light mode */
+    }
+
+    /* Override the glow color for dark mode */
+    .dark .glow-card {
+      --glow-color: rgba(45, 219, 255, 0.75);
+    }
+
+    .glow-card::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 0.8rem;
+      /* Slightly larger than the card's rounded-xl */
+      /* Use the CSS variable for the gradient */
+      background: radial-gradient(400px at var(--glow-x) var(--glow-y),
+          var(--glow-color),
+          transparent 80%);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+      z-index: 1;
+    }
+
+    .glow-card:hover::before {
+      opacity: 1;
+    }
+
+    .glow-content {
+      position: relative;
+      z-index: 2;
+      /* Sits above the glow pseudo-element */
+      background: inherit;
+      border-radius: 0.75rem;
+      /* rounded-xl */
+    }
+
+    /* --- End Glow Effect Styles --- */
+  </style>
 </head>
-<body>
-   <p>Hello AlirezaNoorizadeh</p>
+
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+
+  <div id="main-container" class="flex flex-row max-w-6xl mx-auto p-8 md:py-16 gap-8">
+
+    <main class="flex-1">
+      <div class="space-y-12">
+
+        <section id="profile" class="glow-card bg-white dark:bg-slate-800 rounded-xl shadow-md">
+          <div class="glow-content p-6">
+            <div class="flex flex-col md:flex-row gap-8">
+              <div class="flex-shrink-0 w-full md:w-48 text-center">
+                <img src="https://alirezanoorizadeh.github.io/assets/profile-image.jpg" alt="Profile Picture"
+                  class="w-full rounded-xl mx-auto shadow-md">
+                <a href="https://drive.google.com/drive/folders/12Mpgq_YHGGQ0HSXEZJ0ZMBx5dW8oiq6h?usp=sharing"
+                  class="mt-4 inline-block bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded-xl transition-colors w-full"
+                  data-key="downloadCV">Download CV</a>
+              </div>
+              <div class="flex-1">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h1 class="text-4xl font-bold text-slate-800 dark:text-white" data-key="fullName">Alireza Noorizadeh
+                    </h1>
+                    <p class="text-lg mt-1 text-slate-600 dark:text-slate-300" data-key="jobTitle">SOFTWARE ENGINEER |
+                      AI DEVELOPER & PRODUCT-THINKER</p>
+                  </div>
+                  <div class="flex gap-5 text-slate-500 dark:text-slate-400">
+                    <a href="https://github.com/AlirezaNoorizadeh" target="_blank"
+                      class="hover:text-sky-500"><iconify-icon icon="mdi:github" width="30"
+                        height="30"></iconify-icon></a>
+                    <a href="https://www.linkedin.com/in/AlirezaNoorizadeh" target="_blank"
+                      class="hover:text-sky-500"><iconify-icon icon="mdi:linkedin" width="30"
+                        height="30"></iconify-icon></a>
+                    <a href="https://alirezanoorizadeh.github.io/" target="_blank"
+                      class="hover:text-sky-500"><iconify-icon icon="mdi:web" width="30" height="30"></iconify-icon></a>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-6 text-sm">
+                  <div><strong class="text-slate-500 dark:text-slate-400" data-key="phoneLabel">Phone:</strong> <span
+                      dir="ltr">+98 910 557 4149</span></div>
+                  <div><strong class="text-slate-500 dark:text-slate-400" data-key="emailLabel">Email:</strong>
+                    noorizadeh.ar@gmail.com</div>
+                  <div><strong class="text-slate-500 dark:text-slate-400" data-key="fromLabel">From:</strong> <span
+                      data-key="fromValue">Tehran, Iran</span></div>
+                  <div><strong href="https://alirezanoorizadeh.github.io/" target="_blank"
+                      class="text-slate-500 dark:text-slate-400" data-key="websiteLabel">Website:</strong> <a
+                      href="https://alirezanoorizadeh.github.io/" target="_blank"><span
+                        data-key="websiteValue">alirezanoorizadeh.github.io</span></a></div>
+                </div>
+                <p class="mt-6 text-slate-600 dark:text-slate-300 leading-relaxed" data-key="aboutMeText">
+                  A full-stack developer (C#/.NET) turned AI enthusiast, I build machine learning models
+                  (TensorFlow/scikit-learn) and lead product strategy for NLP teams. My dual expertise lets
+                  me engineer solutions with a product mindset—ensuring scalability, usability, and business
+                  alignment. Currently seeking roles where I can merge code and strategy to ship impactful
+                  AI systems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="glow-card bg-white dark:bg-slate-800 rounded-xl shadow-md">
+          <div class="glow-content p-6">
+            <h2 class="flex items-center gap-x-3 text-2xl font-bold mb-4 text-sky-500 dark:text-sky-400">
+              <iconify-icon icon="fa6-solid:bars-progress" width="24" height="24"></iconify-icon>
+              <span data-key="skillsTitle">Skills</span>
+            </h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-600 dark:text-slate-300 mb-4" data-key="iAlreadyKnow">I
+                  already know</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
+                  <div class="flex items-center gap-5"><iconify-icon icon="devicon:csharp" width="30"
+                      height="30"></iconify-icon>
+                    <div class="flex-1">
+                      <p class="font-medium text-sm text-slate-700 dark:text-slate-200">C# / C / C++</p>
+                      <div class="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-1.5 mt-1">
+                        <div class="bg-sky-500 h-1.5 rounded-full" style="width: 75%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-5"><iconify-icon icon="devicon:python" width="30"
+                      height="30"></iconify-icon>
+                    <div class="flex-1">
+                      <p class="font-medium text-sm text-slate-700 dark:text-slate-200">Python</p>
+                      <div class="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-1.5 mt-1">
+                        <div class="bg-sky-500 h-1.5 rounded-full" style="width: 60%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-5"><iconify-icon icon="devicon:azuresqldatabase" width="30"
+                      height="30"></iconify-icon>
+                    <div class="flex-1">
+                      <p class="font-medium text-sm text-slate-700 dark:text-slate-200">SQL Server</p>
+                      <div class="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-1.5 mt-1">
+                        <div class="bg-sky-500 h-1.5 rounded-full" style="width: 60%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-5"><iconify-icon icon="logos:javascript" width="30"
+                      height="30"></iconify-icon>
+                    <div class="flex-1">
+                      <p class="font-medium text-sm text-slate-700 dark:text-slate-200">JavaScript / Ajax</p>
+                      <div class="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-1.5 mt-1">
+                        <div class="bg-sky-500 h-1.5 rounded-full" style="width: 50%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-5"><iconify-icon icon="logos:git-icon" width="30"
+                      height="30"></iconify-icon>
+                    <div class="flex-1">
+                      <p class="font-medium text-sm text-slate-700 dark:text-slate-200">Git</p>
+                      <div class="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-1.5 mt-1">
+                        <div class="bg-sky-500 h-1.5 rounded-full" style="width: 85%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-5"><iconify-icon icon="logos:jira" width="30"
+                      height="30"></iconify-icon>
+                    <div class="flex-1">
+                      <p class="font-medium text-sm text-slate-700 dark:text-slate-200">Jira / Notion</p>
+                      <div class="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-1.5 mt-1">
+                        <div class="bg-sky-500 h-1.5 rounded-full" style="width: 65%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-slate-600 dark:text-slate-300 mb-4" data-key="iWantToLearn">I want
+                  to learn</h3>
+                <div class="flex flex-wrap gap-4">
+                  <span
+                    class="flex items-center gap-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium px-3 py-1.5 rounded-md">
+                    <iconify-icon icon="logos:postgresql" width="20" height="20"></iconify-icon> PostgreSQL
+                  </span>
+                  <span
+                    class="flex items-center gap-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium px-3 py-1.5 rounded-md">
+                    <iconify-icon icon="devicon:dot-net" width="20" height="20"></iconify-icon> SignalR
+                  </span>
+                  <span
+                    class="flex items-center gap-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium px-3 py-1.5 rounded-md">
+                    <iconify-icon icon="simple-icons:opencv" width="20" height="20"></iconify-icon> OpenCV
+                  </span>
+                  <span
+                    class="flex items-center gap-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium px-3 py-1.5 rounded-md">
+                    <iconify-icon icon="logos:go" width="20" height="20"></iconify-icon> Go
+                  </span>
+                  <span
+                    class="flex items-center gap-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium px-3 py-1.5 rounded-md">
+                    <iconify-icon icon="logos:cloudflare-icon" width="20" height="20"></iconify-icon> Cloudflare
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-slate-600 dark:text-slate-300 mb-4" data-key="iSpeak">I speak</h3>
+                <div class="flex flex-wrap gap-10">
+                  <div class="flex items-center gap-5">
+                    <iconify-icon icon="emojione:flag-for-iran" width="28" height="28"></iconify-icon>
+                    <div>
+                      <p class="font-medium text-slate-700 dark:text-slate-200" data-key="persianLang">Persian</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400" data-key="nativeLang">Native</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-5">
+                    <iconify-icon icon="emojione:flag-for-united-kingdom" width="28" height="28"></iconify-icon>
+                    <div>
+                      <p class="font-medium text-slate-700 dark:text-slate-200" data-key="englishLang">English</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400" data-key="mediumLang">Intermediate</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="glow-card bg-white dark:bg-slate-800 rounded-xl shadow-md">
+          <div class="glow-content p-6">
+            <h2 class="flex items-center gap-x-3 text-2xl font-bold mb-4 text-sky-500 dark:text-sky-400">
+              <iconify-icon icon="fa6-solid:suitcase" width="24" height="24"></iconify-icon>
+              <span data-key="experienceTitle">Work Experience</span>
+            </h2>
+            <div class="space-y-6">
+
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="exp1Title">Scrum Master (Part-Time) - National Brain
+                    Center</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="exp1Date">October 2024
+                    - Present</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="exp1Desc1">Lead cross-functional Al team in an NLP-focused project, managing backlog and
+                    prioritizing tasks.</li>
+                  <li data-key="exp1Desc2">Facilitate Agile ceremonies (daily standups, sprint planning, retrospectives)
+                    to boost team performance.</li>
+                  <li data-key="exp1Desc3">Collaborate with stakeholders to align roadmap milestones with product goals
+                    and delivery timelines.</li>
+                </ul>
+              </div>
+
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="exp2Title">Full-Stack Developer (C#/.NET) - National Brain
+                    Center</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="exp2Date">February
+                    2023 - Present</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="exp2Desc1">Develop and maintain web applications using C#, .NET, JavaScript, and SQL
+                    Server.</li>
+                  <li data-key="exp2Desc2">Design scalable APIs and optimize backend performance in collaboration with
+                    UI/UX teams.</li>
+                  <li data-key="exp2Desc3">Conduct code reviews and implement CI/CD pipelines for faster deployment
+                    cycles.</li>
+                </ul>
+              </div>
+
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="exp3Title">Graphic Designer - Freelance</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="exp3Date">January 2021
+                    - February 2023</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="exp3Desc1">Designed brand identities and logos for musicians, podcasts, religious
+                    groups, and personal branding.</li>
+                  <li data-key="exp3Desc2">Created large-format physical media including posters, banners, and billboard
+                    advertisements.</li>
+                  <li data-key="exp3Desc3">Developed digital assets and advertising graphics for websites, blogs, and
+                    sponsored news content.</li>
+                </ul>
+              </div>
+
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="exp4Title">Website Administrator & Content Manager -
+                    rouyeshelectric.com / moteajeb.ir</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="exp4Date">June 2021 -
+                    January 2023</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="exp4Desc1">Produced and edited specialized and general content for client websites.</li>
+                  <li data-key="exp4Desc2">Managed visual content including custom graphics, banners, and Ul elements.
+                  </li>
+                  <li data-key="exp4Desc3">Handled regular updates and SEO optimization of website articles and media.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="exp5Title">Book Editor - Freelance</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="exp5Date">March 2021 -
+                    May 2022</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="exp5Desc1">Edited manuscripts for clarity, grammar, style, and consistency across
+                    formats.</li>
+                  <li data-key="exp5Desc2">Worked closely with authors to restructure content and elevate readability.
+                  </li>
+                  <li data-key="exp5Desc3">Delivered publication-ready drafts for both academic and general readership.
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="glow-card bg-white dark:bg-slate-800 rounded-xl shadow-md">
+          <div class="glow-content p-6">
+            <h2 class="flex items-center gap-x-3 text-2xl font-bold mb-4 text-sky-500 dark:text-sky-400">
+              <iconify-icon icon="fa6-solid:rocket" width="24" height="24"></iconify-icon>
+              <span data-key="projectsTitle">Projects</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+
+              <div
+                class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:shadow-lg transition-shadow flex flex-col">
+                <h3 class="font-semibold text-lg" data-key="proj1Title">DapperVsEFCore</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 flex-grow" data-key="proj1Desc">Implementing
+                  and comparing CRUD operations using Dapper vs EFCore.</p>
+                <div class="flex justify-between items-center mt-3">
+                  <span
+                    class="bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 text-xs font-medium px-2 py-0.5 rounded-md"
+                    data-key="proj1Tech">C#</span>
+                  <a href="https://github.com/AlirezaNoorizadeh/DapperVsEFCore" target="_blank"
+                    class="text-sky-500 hover:underline text-sm font-semibold" data-key="viewProject">View Project
+                    &rarr;</a>
+                </div>
+              </div>
+
+              <div
+                class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:shadow-lg transition-shadow flex flex-col">
+                <h3 class="font-semibold text-lg" data-key="proj2Title">GameStore</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 flex-grow" data-key="proj2Desc">A lightweight
+                  RESTful API template (async/SQLite) for game inventory management – ready for extension.</p>
+                <div class="flex justify-between items-center mt-3">
+                  <span
+                    class="bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 text-xs font-medium px-2 py-0.5 rounded-md"
+                    data-key="proj2Tech">C#</span>
+                  <a href="https://github.com/AlirezaNoorizadeh/GameStore" target="_blank"
+                    class="text-sky-500 hover:underline text-sm font-semibold" data-key="viewProject">View Project
+                    &rarr;</a>
+                </div>
+              </div>
+
+              <div
+                class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:shadow-lg transition-shadow flex flex-col">
+                <h3 class="font-semibold text-lg" data-key="proj3Title">3D-web-voxel-editor</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 flex-grow" data-key="proj3Desc">Interactive 3D
+                  voxel editor for the browser with English/Persian UI.</p>
+                <div class="flex justify-between items-center mt-3">
+                  <span
+                    class="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-xs font-medium px-2 py-0.5 rounded-md"
+                    data-key="proj3Tech">JavaScript</span>
+                  <a href="https://github.com/AlirezaNoorizadeh/3D-web-voxel-editor" target="_blank"
+                    class="text-sky-500 hover:underline text-sm font-semibold" data-key="viewProject">View Project
+                    &rarr;</a>
+                </div>
+              </div>
+
+              <div
+                class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:shadow-lg transition-shadow flex flex-col">
+                <h3 class="font-semibold text-lg" data-key="proj4Title">genetic-algorithm-8-queens</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 flex-grow" data-key="proj4Desc">Solving the
+                  8-Queens puzzle using a basic genetic algorithm.</p>
+                <div class="flex justify-between items-center mt-3">
+                  <span
+                    class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-medium px-2 py-0.5 rounded-md"
+                    data-key="proj4Tech">Python</span>
+                  <a href="https://github.com/AlirezaNoorizadeh/genetic-algorithm-8-queens" target="_blank"
+                    class="text-sky-500 hover:underline text-sm font-semibold" data-key="viewProject">View Project
+                    &rarr;</a>
+                </div>
+              </div>
+
+              <div
+                class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:shadow-lg transition-shadow flex flex-col">
+                <h3 class="font-semibold text-lg" data-key="proj5Title">Maze</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 flex-grow" data-key="proj5Desc">Maze game
+                  simulation using C++ for challenging coding skills.</p>
+                <div class="flex justify-between items-center mt-3">
+                  <span
+                    class="bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-xs font-medium px-2 py-0.5 rounded-md"
+                    data-key="proj5Tech">C++</span>
+                  <a href="https://github.com/AlirezaNoorizadeh/Maze" target="_blank"
+                    class="text-sky-500 hover:underline text-sm font-semibold" data-key="viewProject">View Project
+                    &rarr;</a>
+                </div>
+              </div>
+
+              <div
+                class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:shadow-lg transition-shadow flex flex-col">
+                <h3 class="font-semibold text-lg" data-key="proj6Title">linear-regression-weather</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 flex-grow" data-key="proj6Desc">Predict
+                  temperature using linear regression on historical weather data.</p>
+                <div class="flex justify-between items-center mt-3">
+                  <span
+                    class="bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 text-xs font-medium px-2 py-0.5 rounded-md"
+                    data-key="proj6Tech">Jupyter Notebook</span>
+                  <a href="https://github.com/AlirezaNoorizadeh/linear-regression-weather" target="_blank"
+                    class="text-sky-500 hover:underline text-sm font-semibold" data-key="viewProject">View Project
+                    &rarr;</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+
+        <section id="volunteering" class="glow-card bg-white dark:bg-slate-800 rounded-xl shadow-md">
+          <div class="glow-content p-6">
+            <h2 class="flex items-center gap-x-3 text-2xl font-bold mb-4 text-sky-500 dark:text-sky-400">
+              <iconify-icon icon="fa6-solid:hand-holding-heart" width="26" height="26"></iconify-icon>
+              <span data-key="volunteerTitle">Volunteer Works</span>
+            </h2>
+            <div class="space-y-6">
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="volunteer1Title">Executive Team Coordinator - IEEE
+                    ICWR2025</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="volunteer1Date">April
+                    2025</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="volunteer1Desc1">Coordinating the executive team for the IEEE international conference
+                    at the University of Science and Culture.</li>
+                </ul>
+              </div>
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="volunteer2Title">Executive Committee Member - IEEE
+                    ICWR2024</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="volunteer2Date">April
+                    2024</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="volunteer2Desc1">Member of the executive committee for the IEEE international
+                    conference.</li>
+                </ul>
+              </div>
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="volunteer3Title">Computer Engineering Association Member
+                  </h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="volunteer3Date">2023 -
+                    2024</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="volunteer3Desc1">Active member of the Computer Engineering Association at the University
+                    of Science and Culture.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="glow-card bg-white dark:bg-slate-800 rounded-xl shadow-md">
+          <div class="glow-content p-6">
+            <h2 class="flex items-center gap-x-3 text-2xl font-bold mb-4 text-sky-500 dark:text-sky-400">
+              <iconify-icon icon="fa6-solid:hand-holding-heart" width="26" height="26"></iconify-icon>
+              <span data-key="educationTitle">Education</span>
+            </h2>
+            <div class="space-y-4">
+              <div>
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="edu1Degree">Bachelor of Computer Engineering</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400" data-key="edu1Date">2022 - Present</p>
+                </div>
+                <p class="text-slate-600 dark:text-slate-300" data-key="edu1University">University of Science and
+                  Culture</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="awards" class="glow-card bg-white dark:bg-slate-800 rounded-xl shadow-md">
+          <div class="glow-content p-6">
+            <h2 class="flex items-center gap-x-3 text-2xl font-bold mb-4 text-sky-500 dark:text-sky-400">
+              <iconify-icon icon="fa6-solid:award" width="26" height="26"></iconify-icon>
+              <span data-key="awardsTitle">Honors & Awards</span>
+            </h2>
+            <div class="space-y-6">
+              <div class="experience-item">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                  <h3 class="font-semibold text-lg" data-key="award1Title">Third Place - Spaghetti Code Competition</h3>
+                  <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0" data-key="award1Date">May
+                    2023</span>
+                </div>
+                <ul class="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300 space-y-1">
+                  <li data-key="award1Desc1">Awarded by the University of Technology. Supervised by Presidential
+                    Innovation.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <nav
+      class="flex-col gap-2 bg-white dark:bg-slate-800 h-fit hidden sticky top-8 p-2 rounded-xl shadow-md xl:flex z-20">
+      <a href="#profile"
+        class="relative group rounded-xl transition h-10 inline-flex items-center justify-center w-10 hover:bg-slate-200 dark:hover:bg-slate-700"
+        aria-label="Profile section" data-key="tooltipProfile" data-tooltip="Profile">
+        <iconify-icon icon="fa6-solid:user" class="text-slate-500 group-hover:text-sky-500" width="20"
+          height="20"></iconify-icon>
+      </a>
+      <a href="#skills"
+        class="relative group rounded-xl transition h-10 inline-flex items-center justify-center w-10 hover:bg-slate-200 dark:hover:bg-slate-700"
+        aria-label="Skills section" data-key="tooltipSkills" data-tooltip="Skills">
+        <iconify-icon icon="fa6-solid:bars-progress" class="text-slate-500 group-hover:text-sky-500" width="20"
+          height="20"></iconify-icon>
+      </a>
+      <a href="#experience"
+        class="relative group rounded-xl transition h-10 inline-flex items-center justify-center w-10 hover:bg-slate-200 dark:hover:bg-slate-700"
+        aria-label="Work experience section" data-key="tooltipExperience" data-tooltip="Work experience">
+        <iconify-icon icon="fa6-solid:suitcase" class="text-slate-500 group-hover:text-sky-500" width="20"
+          height="20"></iconify-icon>
+      </a>
+      <a href="#projects"
+        class="relative group rounded-xl transition h-10 inline-flex items-center justify-center w-10 hover:bg-slate-200 dark:hover:bg-slate-700"
+        aria-label="Projects section" data-key="tooltipProjects" data-tooltip="Projects">
+        <iconify-icon icon="fa6-solid:rocket" class="text-slate-500 group-hover:text-sky-500" width="20"
+          height="20"></iconify-icon>
+      </a>
+      <a href="#volunteering"
+        class="relative group rounded-xl transition h-10 inline-flex items-center justify-center w-10 hover:bg-slate-200 dark:hover:bg-slate-700"
+        aria-label="Volunteer works section" data-key="tooltipVolunteer" data-tooltip="Volunteer Works">
+        <iconify-icon icon="fa6-solid:hand-holding-heart" class="text-slate-500 group-hover:text-sky-500" width="20"
+          height="20"></iconify-icon>
+      </a>
+      <a href="#education"
+        class="relative group rounded-xl transition h-10 inline-flex items-center justify-center w-10 hover:bg-slate-200 dark:hover:bg-slate-700"
+        aria-label="Education section" data-key="tooltipEducation" data-tooltip="Education">
+        <iconify-icon icon="fa6-solid:graduation-cap" class="text-slate-500 group-hover:text-sky-500" width="20"
+          height="20"></iconify-icon>
+      </a>
+      <a href="#awards"
+        class="relative group rounded-xl transition h-10 inline-flex items-center justify-center w-10 hover:bg-slate-200 dark:hover:bg-slate-700"
+        aria-label="Honors & Awards section" data-key="tooltipAwards" data-tooltip="Honors & Awards">
+        <iconify-icon icon="fa6-solid:award" class="text-slate-500 group-hover:text-sky-500" width="20"
+          height="20"></iconify-icon>
+      </a>
+    </nav>
+  </div>
+
+  <div id="control-buttons" class="fixed bottom-4 left-4 z-20 flex flex-col gap-3" dir="ltr">
+    <div>
+      <button id="theme-toggle-btn"
+        class="w-11 h-11 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+        aria-label="Toggle theme">
+        <iconify-icon icon="fa6-solid:moon" class="text-slate-500 dark:hidden" width="20" height="20"></iconify-icon>
+        <iconify-icon icon="fa6-solid:sun" class="text-slate-500 hidden dark:inline" width="20"
+          height="20"></iconify-icon>
+      </button>
+    </div>
+    <div class="flex bg-white dark:bg-slate-800 rounded-full shadow-lg overflow-hidden">
+      <button id="lang-en" class="px-3 py-2 text-sm font-semibold">EN</button>
+      <button id="lang-fa" class="px-3 py-2 text-sm font-semibold">FA</button>
+    </div>
+  </div>
+
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+
+  <script>
+    const translations = {
+      // GENERAL
+      pageTitle: { en: 'Alireza Noorizadeh - SOFTWARE ENGINEER | AI DEVELOPER & PRODUCT-THINKER', fa: 'علیرضا نوری زاده - مهندس نرم‌افزار | توسعه‌دهنده هوش مصنوعی و متفکر محصول' },
+      downloadCV: { en: 'Download CV', fa: 'دانلود رزومه' },
+      viewProject: { en: 'View Project &rarr;', fa: 'مشاهده پروژه &larr;' },
+      // PROFILE SECTION
+      fullName: { en: 'Alireza Noorizadeh', fa: 'علیرضا نوری زاده' },
+      jobTitle: { en: 'SOFTWARE ENGINEER | AI DEVELOPER & PRODUCT-THINKER', fa: 'مهندس نرم‌افزار | توسعه‌دهنده هوش مصنوعی و متفکر محصول' },
+      phoneLabel: { en: 'Phone:', fa: 'تلفن:' },
+      emailLabel: { en: 'Email:', fa: 'ایمیل:' },
+      fromLabel: { en: 'From:', fa: 'محل سکونت:' },
+      fromValue: { en: 'Tehran, Iran', fa: 'تهران، ایران' },
+      websiteLabel: { en: 'Website:', fa: 'وب‌سایت:' },
+      websiteValue: { en: 'alirezanoorizadeh.github.io', fa: 'alirezanoorizadeh.github.io' },
+      aboutMeText: {
+        en: "A full-stack developer (C#/.NET) turned AI enthusiast, I build machine learning models (TensorFlow/scikit-learn) and lead product strategy for NLP teams. My dual expertise lets me engineer solutions with a product mindset—ensuring scalability, usability, and business alignment. Currently seeking roles where I can merge code and strategy to ship impactful AI systems.",
+        fa: "یک توسعه‌دهنده فول‌استک (#C/.NET) که به یک علاقه‌مند به هوش مصنوعی تبدیل شده‌ام، مدل‌های یادگیری ماشین (TensorFlow/scikit-learn) می‌سازم و استراتژی محصول را برای تیم‌های پردازش زبان طبیعی (NLP) رهبری می‌کنم. تخصص دوگانه من به من امکان می‌دهد راه‌حل‌هایی با ذهنیت محصول طراحی کنم—با تضمین مقیاس‌پذیری، قابلیت استفاده و همسویی با اهداف کسب‌وکار. در حال حاضر به دنبال نقش‌هایی هستم که در آن‌ها بتوانم کدنویسی و استراتژی را ادغام کنم تا سیستم‌های هوش مصنوعی تأثیرگذار را ارائه دهم."
+      },
+      // SKILLS SECTION
+      skillsTitle: { en: 'Skills', fa: 'مهارت‌ها' },
+      iAlreadyKnow: { en: 'I already know', fa: 'مهارت‌های فعلی' },
+      iWantToLearn: { en: 'I want to learn', fa: 'علاقه‌مند به یادگیری' },
+      iSpeak: { en: 'I speak', fa: 'زبان‌ها' },
+      persianLang: { en: 'Persian', fa: 'فارسی' },
+      nativeLang: { en: 'Native', fa: 'زبان مادری' },
+      englishLang: { en: 'English', fa: 'انگلیسی' },
+      professionalLang: { en: 'Professional', fa: 'حرفه‌ای' },
+      mediumLang: { en: 'Intermediate', fa: 'متوسط' },
+      // EXPERIENCE SECTION
+      experienceTitle: { en: 'Work Experience', fa: 'سوابق کاری' },
+      exp1Title: { en: 'Scrum Master (Part-Time) - National Brain Center', fa: 'اسکرام مستر (پاره‌وقت) - مرکز ملی مغز' },
+      exp1Date: { en: 'October 2024 - Present', fa: 'مهر ۱۴۰۳ - اکنون' },
+      exp1Desc1: { en: 'Lead cross-functional Al team in an NLP-focused project, managing backlog and prioritizing tasks.', fa: 'رهبری تیم چندوظیفه‌ای هوش مصنوعی در پروژه‌ای متمرکز بر NLP، مدیریت بک‌لاگ و اولویت‌بندی وظایف.' },
+      exp1Desc2: { en: 'Facilitate Agile ceremonies (daily standups, sprint planning, retrospectives) to boost team performance.', fa: 'تسهیل مراسم‌های اجایل (استندآپ روزانه، برنامه‌ریزی اسپرینت، بازنگری) برای بهبود عملکرد تیم.' },
+      exp1Desc3: { en: 'Collaborate with stakeholders to align roadmap milestones with product goals and delivery timelines.', fa: 'همکاری با ذینفعان برای همسوسازی اهداف نقشه راه با اهداف محصول و زمان‌بندی تحویل.' },
+
+      exp2Title: { en: 'Full-Stack Developer (C#/.NET) - Farsco', fa: 'توسعه‌دهنده فول-استک (C#/.NET) - Farsco' },
+      exp2Date: { en: 'February 2023 - Present', fa: 'بهمن ۱۴۰۱ - اکنون' },
+      exp2Desc1: { en: 'Develop and maintain web applications using C#, .NET, JavaScript, and SQL Server.', fa: 'توسعه و نگهداری اپلیکیشن‌های وب با استفاده از C#، .NET، جاوااسکریپت و SQL Server.' },
+      exp2Desc2: { en: 'Design scalable APIs and optimize backend performance in collaboration with UI/UX teams.', fa: 'طراحی API‌های مقیاس‌پذیر و بهینه‌سازی عملکرد بک‌اند با همکاری تیم‌های UI/UX.' },
+      exp2Desc3: { en: 'Conduct code reviews and implement CI/CD pipelines for faster deployment cycles.', fa: 'بررسی کد و پیاده‌سازی پایپ‌لاین‌های CI/CD برای چرخه‌های استقرار سریع‌تر.' },
+
+      exp3Title: { en: 'Graphic Designer - Freelance', fa: 'طراح گرافیک - فریلنس' },
+      exp3Date: { en: 'January 2021 - February 2023', fa: 'دی ۱۳۹۹ - بهمن ۱۴۰۱' },
+      exp3Desc1: { en: 'Designed brand identities and logos for musicians, podcasts, religious groups, and personal branding.', fa: 'طراحی هویت برند و لوگو برای موسیقی‌دانان، پادکست‌ها، گروه‌های مذهبی و برندینگ شخصی.' },
+      exp3Desc2: { en: 'Created large-format physical media including posters, banners, and billboard advertisements.', fa: 'ایجاد رسانه‌های فیزیکی با فرمت بزرگ شامل پوستر، بنر و تبلیغات بیلبورد.' },
+      exp3Desc3: { en: 'Developed digital assets and advertising graphics for websites, blogs, and sponsored news content.', fa: 'توسعه دارایی‌های دیجیتال و گرافیک‌های تبلیغاتی برای وب‌سایت‌ها و وبلاگ‌ها.' },
+
+      exp4Title: { en: 'Website Administrator & Content Manager - rouyeshelectric.com / moteajeb.ir', fa: 'مدیر وب‌سایت و محتوا - rouyeshelectric.com / moteajeb.ir' },
+      exp4Date: { en: 'June 2021 - January 2023', fa: 'خرداد ۱۴۰۰ - دی ۱۴۰۱' },
+      exp4Desc1: { en: 'Produced and edited specialized and general content for client websites.', fa: 'تولید و ویرایش محتوای تخصصی و عمومی برای وب‌سایت‌های مشتریان.' },
+      exp4Desc2: { en: 'Managed visual content including custom graphics, banners, and Ul elements.', fa: 'مدیریت محتوای بصری شامل گرافیک‌های سفارشی، بنرها و عناصر رابط کاربری.' },
+      exp4Desc3: { en: 'Handled regular updates and SEO optimization of website articles and media.', fa: 'انجام به‌روزرسانی‌های منظم و بهینه‌سازی سئو مقالات و رسانه‌های وب‌سایت.' },
+
+      exp5Title: { en: 'Book Editor - Freelance', fa: 'ویراستار کتاب - فریلنس' },
+      exp5Date: { en: 'March 2021 - May 2022', fa: 'اسفند ۱۳۹۹ - اردیبهشت ۱۴۰۱' },
+      exp5Desc1: { en: 'Edited manuscripts for clarity, grammar, style, and consistency across formats.', fa: 'ویرایش نسخه‌های خطی از نظر وضوح، گرامر، سبک و یکپارچگی در فرمت‌های مختلف.' },
+      exp5Desc2: { en: 'Worked closely with authors to restructure content and elevate readability.', fa: 'همکاری نزدیک با نویسندگان برای بازسازی محتوا و افزایش خوانایی.' },
+      exp5Desc3: { en: 'Delivered publication-ready drafts for both academic and general readership.', fa: 'تحویل پیش‌نویس‌های آماده چاپ برای مخاطبان دانشگاهی و عمومی.' },
+
+      // PROJECTS SECTION
+      projectsTitle: { en: 'Projects', fa: 'پروژه‌ها' },
+
+      proj1Title: { en: 'DapperVsEFCore', fa: 'مقایسه Dapper و EFCore' },
+      proj1Desc: { en: 'Implementing and comparing CRUD operations using Dapper vs EFCore.', fa: 'پیاده‌سازی و مقایسه عملیات CRUD با استفاده از Dapper در مقابل EFCore.' },
+      proj1Tech: { en: 'C#', fa: 'C#' },
+
+      proj2Title: { en: 'GameStore', fa: 'فروشگاه بازی' },
+      proj2Desc: { en: 'A lightweight RESTful API template (async/SQLite) for game inventory management – ready for extension.', fa: 'یک قالب API سبک RESTful (ناهمزمان/SQLite) برای مدیریت موجودی بازی - آماده برای توسعه.' },
+      proj2Tech: { en: 'C#', fa: 'C#' },
+
+      proj3Title: { en: '3D-web-voxel-editor', fa: 'ویرایشگر واکسل سه‌بعدی تحت وب' },
+      proj3Desc: { en: 'Interactive 3D voxel editor for the browser with English/Persian UI.', fa: 'ویرایشگر تعاملی واکسل سه‌بعدی برای مرورگر با رابط کاربری انگلیسی/فارسی.' },
+      proj3Tech: { en: 'JavaScript', fa: 'JavaScript' },
+
+      proj4Title: { en: 'genetic-algorithm-8-queens', fa: 'الگوریتم ژنتیک برای مسئله هشت وزیر' },
+      proj4Desc: { en: 'Solving the 8-Queens puzzle using a basic genetic algorithm.', fa: 'حل مسئله هشت وزیر با استفاده از یک الگوریتم ژنتیک پایه.' },
+      proj4Tech: { en: 'Python', fa: 'Python' },
+
+      proj5Title: { en: 'Maze', fa: 'بازی ماز' },
+      proj5Desc: { en: 'Maze game simulation using C++ for challenging coding skills.', fa: 'شبیه‌سازی بازی ماز با استفاده از C++ برای به چالش کشیدن مهارت‌های کدنویسی.' },
+      proj5Tech: { en: 'C++', fa: 'C++' },
+
+      proj6Title: { en: 'linear-regression-weather', fa: 'رگرسیون خطی برای پیش‌بینی آب‌وهوا' },
+      proj6Desc: { en: 'Predict temperature using linear regression on historical weather data.', fa: 'پیش‌بینی دما با استفاده از رگرسیون خطی بر روی داده‌های تاریخی آب‌وهوا.' },
+      proj6Tech: { en: 'Jupyter Notebook', fa: 'Jupyter Notebook' },
+
+      // VOLUNTEER SECTION
+      volunteerTitle: { en: 'Volunteer Works', fa: 'فعالیت‌های داوطلبانه' },
+      volunteer1Title: { en: 'Executive Team Coordinator - IEEE ICWR2025', fa: 'هماهنگ‌کننده تیم اجرایی - IEEE ICWR2025' },
+      volunteer1Date: { en: 'April 2025', fa: 'فروردین ۱۴۰۴' },
+      volunteer1Desc1: { en: 'Coordinating the executive team for the IEEE international conference.', fa: 'هماهنگی تیم اجرایی برای کنفرانس بین‌المللی IEEE.' },
+      volunteer2Title: { en: 'Executive Committee Member - IEEE ICWR2024', fa: 'عضو کمیته اجرایی - IEEE ICWR2024' },
+      volunteer2Date: { en: 'April 2024', fa: 'فروردین ۱۴۰۳' },
+      volunteer2Desc1: { en: 'Member of the executive committee for the IEEE international conference.', fa: 'عضو کمیته اجرایی برای کنفرانس بین‌المللی IEEE.' },
+      volunteer3Title: { en: 'Computer Engineering Association Member', fa: 'عضو انجمن مهندسی کامپیوتر' },
+      volunteer3Date: { en: '2023 - 2024', fa: '۱۴۰۲ - ۱۴۰۳' },
+      volunteer3Desc1: { en: 'Active member of the Computer Engineering Association at the University of Science and Culture.', fa: 'عضو فعال انجمن مهندسی کامپیوتر در دانشگاه علم و فرهنگ.' },
+      // EDUCATION SECTION
+      educationTitle: { en: 'Education', fa: 'تحصیلات' },
+      edu1Degree: { en: 'Bachelor of Computer Engineering', fa: 'کارشناسی مهندسی کامپیوتر' },
+      edu1University: { en: 'University of Science and Culture', fa: 'دانشگاه علم و فرهنگ' },
+      edu1Date: { en: '2022 - Present', fa: '۱۴۰۱ - اکنون' },
+      // AWARDS SECTION
+      awardsTitle: { en: 'Honors & Awards', fa: 'افتخارات و جوایز' },
+      award1Title: { en: 'Third Place - Spaghetti Code Competition', fa: 'مقام سوم - مسابقه کد اسپاگتی' },
+      award1Date: { en: 'May 2023', fa: 'اردیبهشت ۱۴۰۲' },
+      award1Desc1: { en: "Awarded by the Sharif University of Technology. Supervised by Iran Presidential Innovation Fund", fa: 'اعطا شده توسط دانشگاه صنعتی شریف. تحت نظارت مرکز نوآوری ریاست جمهوری ایران.' },
+      // TOOLTIPS
+      tooltipProfile: { en: 'Profile', fa: 'پروفایل' },
+      tooltipSkills: { en: 'Skills', fa: 'مهارت‌ها' },
+      tooltipExperience: { en: 'Work experience', fa: 'سوابق کاری' },
+      tooltipProjects: { en: 'Projects', fa: 'پروژه‌ها' },
+      tooltipVolunteer: { en: 'Volunteer Works', fa: 'فعالیت داوطلبانه' },
+      tooltipEducation: { en: 'Education', fa: 'تحصیلات' },
+      tooltipAwards: { en: 'Honors & Awards', fa: 'جوایز و افتخارات' },
+    };
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+      localStorage.setItem('language', lang);
+
+      document.querySelectorAll('[data-key]').forEach(elem => {
+        const key = elem.getAttribute('data-key');
+        if (translations[key] && translations[key][lang]) {
+          if (key.startsWith('tooltip')) {
+            elem.setAttribute('data-tooltip', translations[key][lang]);
+          } else {
+            elem.innerHTML = translations[key][lang];
+          }
+        }
+      });
+
+      const enButton = document.getElementById('lang-en');
+      const faButton = document.getElementById('lang-fa');
+      if (lang === 'fa') {
+        faButton.classList.add('bg-sky-500', 'text-white');
+        enButton.classList.remove('bg-sky-500', 'text-white');
+      } else {
+        enButton.classList.add('bg-sky-500', 'text-white');
+        faButton.classList.remove('bg-sky-500', 'text-white');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initial Theme Set
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+
+      // Event Listeners
+      document.getElementById('theme-toggle-btn').addEventListener('click', toggleTheme);
+      document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+      document.getElementById('lang-fa').addEventListener('click', () => setLanguage('fa'));
+
+      // Initial Language Set
+      const savedLang = localStorage.getItem('language') || 'en';
+      setLanguage(savedLang);
+
+      // Scrollspy Logic
+      const sections = document.querySelectorAll('main section[id]');
+      const navLinks = document.querySelectorAll('nav a');
+      const updateActiveLink = (id) => {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            updateActiveLink(entry.target.id);
+          }
+        });
+      }, { rootMargin: "-30% 0px -70% 0px" });
+      sections.forEach(section => observer.observe(section));
+
+      // Glow Effect Logic
+      const glowCards = document.querySelectorAll('.glow-card');
+      glowCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--glow-x', `${x}px`);
+          card.style.setProperty('--glow-y', `${y}px`);
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
